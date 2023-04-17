@@ -4,6 +4,7 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
+from src.components.model_trainer import ModelTrainer, ModelTrainerConfig
 
 import pandas as pd
 import numpy as np
@@ -24,7 +25,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Data Ingestion started")
         try:
-            df = pd.read_csv('notebook/Data/New Train Data.csv')
+            df = pd.read_csv('notebook/Data/New_Data1.csv')
             logging.info("Exported the dataset as dataframe")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
@@ -53,4 +54,7 @@ if __name__ == "__main__":
     train_data,test_data = obj.initiate_data_ingestion()
 
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
+
+    model_obj = ModelTrainer()
+    print(model_obj.initiate_model_trainer(train_arr,test_arr))
