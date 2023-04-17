@@ -33,8 +33,20 @@ class ModelTrainer:
                 "AdaBoostClassifier": AdaBoostClassifier()
             }
 
-            model_report: dict = evaluate_model(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models)
+            params = {
+                "RandomForestClassifier": {
+                    'criterion': ['entropy', 'log_loss', 'gini'],
+                    'max_features': ['sqrt','log2',None],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "AdaBoostClassifier": {
+                    'learning_rate': [.1,.01,.5,.001],
+                    'n_estimators': [8,16,32,64,128,256]
+                }
+            }
 
+            model_report: dict = evaluate_model(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models,
+                                                param=params)
             best_model_score = max(sorted(model_report.values()))
 
             best_model_name = list(model_report.keys())[
