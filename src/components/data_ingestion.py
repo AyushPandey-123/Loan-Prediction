@@ -25,7 +25,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Data Ingestion started")
         try:
-            df = pd.read_csv('notebook/Data/New_Data1.csv')
+            df = pd.read_csv('notebook/Data/New_Data01.csv')
             logging.info("Exported the dataset as dataframe")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)

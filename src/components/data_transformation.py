@@ -23,7 +23,7 @@ class DataTransformation:
 
     def get_data_transformer(self):
         try:
-            numerical_columns = ['Dependents', 'Applicant_Income', 'Coapplicant_Income', 'Loan_Amount', 'Term', 'Credit_History', 'Total_Income']
+            numerical_columns = ['Dependents', 'Applicant_Income', 'Coapplicant_Income', 'Loan_Amount', 'Term', 'Credit_History']
 
             categorical_column = ['Gender', 'Married', 'Education', 'Self_Employed', 'Area']
 
