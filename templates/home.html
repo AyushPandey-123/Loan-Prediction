@@ -12,6 +12,11 @@
         <div class="container mt-3">
             <div class="login">
                 <h1 style="text-align: center;">Loan Prediction</h1>
+                <div class="text-center" >
+                <h5 style="text-align: center; display:inline-block; border:  2px solid black; padding: 5px;" id ="myDIV">
+                    Loan Application Status is {{results}} <br>
+                </h5>
+            </div>
                 <form action="{{ url_for('predict_datapoint') }}" method="POST">
                     <div class="mb-3">
                         <label class="form-label">
@@ -123,12 +128,9 @@
                         <input class="form-control" type="number" name="Term" placeholder="Enter Insurance Term" min="0" max="360">
                     </div>
                     <div class="mb-3">
-                        <input class="btn btn-primary" type="Submit" value="Submit Application" required />
+                        <input class="btn btn-primary" type="Submit"  value="Submit Application"   required />
                 </div>
             </form>
-            <h5 style="text-align: center; display: inline-block; border:  2px solid black; padding: 5px;">
-                Loan Application Status is {{results}} <br>
-            </h5>
         </div>
     </div>
     </body>
