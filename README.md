@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Ayush Pandey</h1>
 <h3 align="center">Passionate Machine Learning Developer</h3>
 
-- 🔭 I’m currently working on [Loan Prediction using ML](https://github.com/AyushPandey-123/Loan-Prediction)
+- 🔭 I’m currently working on [Loan Prediction using ML with Deployment](https://github.com/AyushPandey-123/Loan-Prediction)
 
 - 🌱 I’m currently learning **Python, Machine Learning, Flask**
 
